@@ -1,3 +1,4 @@
+package PrimeirosEstudos;
 //Public : Tipo de acesso da classe
 //class : tipo do classe / objeto
 //Primeira classe: Nome da minha classe
