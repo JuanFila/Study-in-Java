@@ -6,10 +6,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 
 
 
@@ -46,6 +49,29 @@ public class FirstController {
   @PostMapping("/home")
   public String postMethodName(@RequestBody User user) {
     return "nome" + user.username();
+  }
+
+  @PostMapping("/methodHeader")
+  public String HeaderMethod(@RequestHeader("name") String name) {
+    return "nome" + name;
+  }
+  @PostMapping("/methodHeaderList")
+  public String HeaderMethodList(@RequestHeader Map<String, String> header) {
+    return "list" + header;
+  }
+
+  //response entity
+  @GetMapping("/entity/{id}")
+  public ResponseEntity<Object> mathodResponseEntity(@PathVariable Long id){
+    // quando precisar ter mais de um retorno usamos o responseentity e passamos um objeto
+    
+    var usuario = new User("nome");
+
+    if (id  > 5) {
+      return ResponseEntity.status(HttpStatus.OK).body("Deu BOA" + usuario);
+      //no status posso usar um http state par aqunado não saber o status a ser usado
+    }
+    return ResponseEntity.status(400).body("Deu erro");
   }
   
   record User(String username) {} // classe sem getters e setters
