@@ -2,6 +2,8 @@ package br.com.example.ioc_di;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -19,5 +21,6 @@ public class IocController {
       return resultado;
 
   }
+  
   
 }
