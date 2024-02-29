@@ -11,7 +11,6 @@ import lombok.Data;
 
 @Data
 public class CandidateEntity {
-  
   private UUID id;
   private String name;
   @NotBlank()
