@@ -36,9 +36,9 @@ public class CompanyEntity {
   private String password;
 
   private String website;
-  private String cpnj;
+  private String cnpj;
   private String name;
-  private String deescription;
+  private String description;
 
   @CreationTimestamp
   private LocalDateTime createdAt;
