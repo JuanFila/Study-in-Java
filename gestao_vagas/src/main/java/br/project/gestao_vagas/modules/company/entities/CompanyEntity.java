@@ -32,7 +32,7 @@ public class CompanyEntity {
   private String email;
 
   @NotBlank()
-  @Length(min = 10, max = 100, message = "A senha precisa ter no mínimo (10) caracteres")
+  @Length(min = 5, max = 200, message = "A senha precisa ter no mínimo (10) caracteres")
   private String password;
 
   private String website;
